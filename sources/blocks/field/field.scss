@@ -1,0 +1,59 @@
+.field {
+  display: inline-block;
+  color: $body-color;
+  font-weight: $font-weight-normal;
+  font-size: rem(14);
+  line-height: 1.25em;
+  background: #ffffff;
+  border-radius: rem(2);
+  transition: $transition-base, height 0s;
+  height: rem(50);
+  padding: 0 rem(20);
+  border: 1px solid rgba($body-color, 0.3);
+  vertical-align: top;
+  &::placeholder {
+    color: rgba($body-color, 0.3);
+  }
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus,
+    &.ik_select_link_focus {
+      outline: 0;
+      border-color: $green-1;
+    }
+  }
+  &:active,
+  &.active {
+    outline: 0;
+  }
+  @include disabled {
+    opacity: .65;
+    cursor: default;
+    pointer-events: none;
+  }
+  &[required], &.required {
+
+  }
+  &.error, &.parsley-error {
+    border-color: $red;
+  }
+
+  &--area {
+    resize: vertical;
+    overflow-y: auto;
+    min-height: rem(103);
+    padding-top: rem(13);
+    padding-bottom: rem(13);
+  }
+
+  &--1 {
+    color: white;
+    background: transparent;
+    border-color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
+}

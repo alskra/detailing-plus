@@ -1,0 +1,19 @@
++b(`modal`, {m: `consult`})#form-consult(style='display: none')
+  +e(`title`, {}, `h4`) Запись на консультацию
+  +e(`lead`, {}, `p`) Если Вам удобно, чтобы мы&nbsp;сами Вам перезвонили, оставьте свой номер телефона.
+  +b(`form-feedback`, {}, `form`)(action='' method='get')
+    +e(`col-1`)
+      +b(`form-label`, {p: false}, `label`)(data-content='Ваш Телефон')
+        +b(`field`, {e: `&`}, `input`)(type='tel' name='tel' placeholder='+7 (___) ___-__-__' data-mask='+7 (000) 000-00-00' required minlength='18')
+    +e(`col-2`)
+      +b(`btn`, {m: `3`, e: `&`}, `button`) Записаться
+
++b(`modal`, {m: `price`})#form-price(style='display: none')
+  +e(`title`, {}, `h4`) Прайс-лист
+  +e(`lead`, {}, `p`) Укажите email, куда отправить полный список услуг и&nbsp;цены.
+  +b(`form-feedback`, {}, `form`)(action='' method='get')
+    +e(`col-1`)
+      +b(`form-label`, {p: false}, `label`)(data-content='Ваш E-mail')
+        +b(`field`, {e: `&`}, `input`)(type='email' name='email' placeholder='' required='')
+    +e(`col-2`)
+      +b(`btn`, {m: `3`, e: `&`}, `button`) Отправить прайс-лист

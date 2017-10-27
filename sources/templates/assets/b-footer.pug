@@ -1,0 +1,8 @@
+mixin b-footer(data)
+  +b('footer', data, 'footer')&attributes(attributes)
+    +e(`container`).container-fluid
+      +b(`logo`, {e: `&`}, `div`)(title=$.config.project.name)
+        +e(`img`, {}, `img`)(src=`img/detailing_plus_logo.png` alt=$.config.project.name)
+      +b(`btn`, {m: `1`, e: `&`}, `a`)(href='' data-fancybox='' data-src='#form-consult') Получить консультацию
+      +b(`btn`, {m: `2`, e: `&`}, `a`)(href='' data-fancybox='' data-src='#form-price') Скачать прайс-лист
+    block

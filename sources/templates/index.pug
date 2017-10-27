@@ -1,0 +1,193 @@
+include assets/variables
+include assets/mixins
+
+include assets/b-page
+include assets/b-header
+include assets/b-footer
+
+- $.set = {page: 'index', breadcrumbs: [$.pages.index]}
+
++b-page()
+  +e(`inner`)
+    +b-header({e: `page`})
+    +b(`content`, ({e: `page`}))
+      +b(`section-start`, {}, `section`)
+        +e(`video`, {}, `video`)(
+          autoplay,
+          loop,
+          data-mobile-src='assets/Detailing-Plus4-(480p).mp4',
+          data-desktop-src='assets/Detailing-Plus4-(720p).mp4'
+        )
+        +e(`inner`)
+          +e(`container`).container-fluid
+            +e(`title`, {}, `h1`) Наш приоритет&nbsp;&ndash; качество
+            +e(`bottom`)
+              +b(`btn`, {m: `1`, e: `&`}, `a`)(href='' data-fancybox='' data-src='#form-consult') Получить консультацию
+              +b(`btn`, {m: `2`, e: `&`}, `a`)(href='' data-fancybox='' data-src='#form-price') Скачать прайс-лист
+
+      +b(`section`, {m: `bg-1`}, `section`)
+        .container-fluid
+          +e(`title`, {}, `h2`) Услуги Detailing Plus
+          +e(`lead`, {m: `service`}, `p`) Студия профессионального детейлинга и&nbsp;сервисный центр возле вашего дома
+          +b(`service-list`)
+            +b(`service-item`, {e: `&:item`}, `a`)(href='#service-center')
+              +e(`img-wrap`, {}, `div`)
+                +e(`img`, {}, `img`)(src='assets/service-center.jpg' srcset='assets/service-center@2x.jpg 2x' alt='')
+              +e(`title`, {}, `h3`) Сервисный центр
+              +e(`desc`, {}, `div`)
+                p Любое техническое обслуживание в&nbsp;удобное время
+            +b(`service-item`, {e: `&:item`}, `a`)(href='#detailing')
+              +e(`img-wrap`, {}, `div`)
+                +e(`img`, {}, `img`)(src='assets/detailing.jpg' srcset='assets/detailing@2x.jpg 2x' alt='')
+              +e(`title`, {}, `h3`) Детейлинг
+              +e(`desc`, {}, `div`)
+                p Полный спектр услуг по&nbsp;детейлингу для вашего авто
+            +b(`service-item`, {e: `&:item`}, `a`)(href='#dry-cleaner')
+              +e(`img-wrap`, {}, `div`)
+                +e(`img`, {}, `img`)(src='assets/dry-cleaner.jpg' srcset='assets/dry-cleaner@2x.jpg 2x' alt='')
+              +e(`title`, {}, `h3`) Химчистка и&nbsp;мойка
+              +e(`desc`, {}, `div`)
+                p Классическая 3-х фазная мойка по&nbsp;фирменной технологии
+
+      +b(`section-service`, {}, `section`)#detailing
+        +e(`slider`).slick-slider(data-slick='{"autoplay": false, "autoplaySpeed": 7000}')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/комплексные услуги по детейлингу.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/услуги детейлинга.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/услуги детейлинга 2.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+        +e(`container`).container-fluid
+          +e(`container-inner`)
+            +e(`title`, {}, `h2`) Комплексные услуги по&nbsp;детейлингу
+            +e(`desc`)
+              p.
+                Неприятная царапина от&nbsp;веток или когтей животных на&nbsp;кузове?
+                Царапины на&nbsp;пластике внутри салона? Появилась потертость от&nbsp;неудачной парковки на&nbsp;бампере?
+                #[br]Мы&nbsp;удаляем дефекты разного происхождения!
+            +e(`list`, {}, `ul`)
+              +e(`li-item`).icon-icon01 Детейлинг мойка
+              +e(`li-item`).icon-icon02 Детейлинг моторного отсека
+              +e(`li-item`).icon-icon03 Антигравийные покрытия
+              +e(`li-item`).icon-icon04 Керамические покрытия
+            +b(`btn`, {m: `3`, e: `&`}, `a`)(href='') Записаться на осмотр
+
+      +b(`section-service`, {m: `bg-1.reverse`}, `section`)#service-center
+        +e(`slider`).slick-slider(data-slick='{"autoplay": false, "autoplaySpeed": 7000}')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/Сервисный центр.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/сервисный центр 1.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/сервисный центр 2.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+        +e(`container`).container-fluid
+          +e(`container-inner`)
+            +e(`title`, {}, `h2`) Сервисный центр
+            +e(`desc`)
+              p.
+                Дилерские стандарты а&nbsp;также высокая квалификация наших специалистов поможет выполнить техническое обслуживание Вашего авто на&nbsp;высоком уровне!
+            +e(`list`, {}, `ul`)
+              +e(`li-item`).icon-icon05 Все необходимые запчасти и&nbsp;расходные материалы вы&nbsp;можете приобрести у&nbsp;нас по&nbsp;адекватным ценам
+              +e(`li-item`).icon-coffee Комфортная комната ожидания в&nbsp;вашем распоряжении на&nbsp;все время обслуживания
+              +e(`li-item`).icon-icon07 Бесплатный трансфер от&nbsp;сервиса до&nbsp;вашего дома
+              +e(`li-item`).icon-icon08 Сезонное хранение резины
+            +b(`btn`, {m: `3`, e: `&`}, `a`)(href='') Получить консультацию мастера
+
+      +b(`section-service`, {}, `section`)#dry-cleaner
+        +e(`slider`).slick-slider(data-slick='{"autoplay": false, "autoplaySpeed": 7000}')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/stock-photo-car-detailing-series-cleaning-car-engine-387149560.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+          +e(`sl-item`).slick-slide.loading
+            +e(`sl-img-wrap`)
+              +e(`sl-img`, {}, `img`)(data-lazy='assets/stock-photo-close-up-of-hand-washing-a-car-interior-174313187.jpg' alt='' data-fit-img='' onload='fitImg(this)')
+        +e(`container`).container-fluid
+          +e(`container-inner`)
+            +e(`title`, {}, `h2`) Комплексная химчистка и&nbsp;мойка
+            +e(`desc`)
+              p.
+                Опытный мастер по&nbsp;детейлингу подберет косметику, а&nbsp;профессиональная команда приведет ваш авто к&nbsp;его первозданному виду, включая:
+            +e(`list`, {}, `ul`)
+              +e(`li-item`).icon-icon09 Мойку двигателя
+              +e(`li-item`).icon-icon10 Очистку от&nbsp;глубоких загрязнений кузова
+              +e(`li-item`).icon-icon11 Чистку салона (кожа, пластик, алькантара и&nbsp;текстиль)
+              +e(`li-item`).icon-icon12 Устранение запахов в&nbsp;салоне
+              +e(`li-item`).icon-icon13 Мойку подвески
+              +e(`li-item`).icon-icon14 Деликатная чистка интерьера
+            +b(`btn`, {m: `3`, e: `&`}, `a`)(href='') Записаться на консультацию
+
+      +b(`section`, {m: `bg-1.pt-lg`}, `section`)
+        +b(`container-fluid`, {m: `wmax-800`, p: false})
+          +e(`title`, {}, `h2`) Цены на&nbsp;услуги
+          +e(`lead`, {}, `p`) Опишите какие услуги вы&nbsp;хотели&nbsp;бы получить, и&nbsp;мы&nbsp;пришлем #[br]детальный расчет на&nbsp;ваш e-mail
+
+          // Form Price
+          +b(`form-price`, {}, `form`)(action='' method='get')
+            +e(`row`).mb-0
+              +b(`field`, {m: `area`, e: `&`}, `textarea`)(name='msg' placeholder='Опишите проблемные места и желаемый результат...')
+            +e(`row`)
+              +b(`field-file`, {e: `&`}, `label`)
+                +e(`input`, {}, `input`)(type='file' name='file' accept='image/*' data-multiple-caption='{count} файлов выбрано' multiple)
+                +e(`label`, {}, `span`).icon-add_file Прикрепить фото
+            +e(`row`).row.mb-0
+              +e(`col`).col-12.col-md-4
+                +b(`form-label`, {p: false}, `label`)(data-content='Модель и марка авто')
+                  +b(`field`, {e: `&`}, `input`)(type='text' name='model' placeholder='')
+              +e(`col`).col-12.col-sm-6.col-md-4
+                +b(`form-label`, {p: false}, `label`)(data-content='Ваш E-mail *')
+                  +b(`field`, {e: `&`}, `input`)(type='email' name='email' placeholder='' required='')
+              +e(`col`).col-12.col-sm-6.col-md-4
+                +b(`form-label`, {p: false}, `label`)(data-content='Ваш Телефон')
+                  +b(`field`, {e: `&`}, `input`)(type='tel' name='tel' placeholder='+7 (___) ___-__-__' data-mask='+7 (000) 000-00-00' minlength='18')
+            +e(`row`, {m: `opts`}).row.mb-0
+              +e(`col`).col-12.col-sm-6.offset-sm-3.col-md-4.offset-md-4.mb-0
+                +b(`btn`, {m: `3`, e: `&`}, `button`) Отправить заявку
+          // /Form Price
+
+      +b(`section`, {}, `section`)
+        +b(`container-fluid`, {p: false})
+          +e(`title`, {m: `portfolio`}, `h2`) Портфолио Detailing Plus
+          +b(`slider-img`).slick-slider(data-slick='{"autoplay": false, "autoplaySpeed": 7000}')
+            +e(`item`).slick-slide.loading
+              +e(`img-wrap`)
+                +e(`img`, {}, `img`)(data-lazy='assets/20170930_192605.jpg' data-lazy-srcset='assets/20170930_192605@2x.jpg 2x' alt='' data-fit-img='' onload='fitImg(this)')
+            +e(`item`).slick-slide.loading
+              +e(`img-wrap`)
+                +e(`img`, {}, `img`)(data-lazy='assets/20170712_201619.jpg' data-lazy-srcset='assets/20170712_201619@2x.jpg 2x' alt='' data-fit-img='' onload='fitImg(this)')
+            +e(`item`).slick-slide.loading
+              +e(`img-wrap`)
+                +e(`img`, {}, `img`)(data-lazy='assets/20170712_201634.jpg' data-lazy-srcset='assets/20170712_201634@2x.jpg 2x' alt='' data-fit-img='' onload='fitImg(this)')
+            +e(`item`).slick-slide.loading
+              +e(`img-wrap`)
+                +e(`img`, {}, `img`)(data-lazy='assets/20170901_164605.jpg' data-lazy-srcset='assets/20170901_164605@2x.jpg 2x' alt='' data-fit-img='' onload='fitImg(this)')
+            +e(`item`).slick-slide.loading
+              +e(`img-wrap`)
+                +e(`img`, {}, `img`)(data-lazy='assets/20170901_164634.jpg' data-lazy-srcset='assets/20170901_164634@2x.jpg 2x' alt='' data-fit-img='' onload='fitImg(this)')
+
+      +b(`get-price`, {}, `form`)(action='' method='get')
+        +e(`container`).container-fluid
+          +e(`title`, {}, `h2`) Получить прайс-лист по e-mail
+          +e(`row`).row
+            +e(`col-1`).col-12.col-sm-6.offset-sm-3.col-md-8.offset-md-0
+              +b(`field`, {m: `1`, e: `&`}, `input`)(type='email' name='email' placeholder='Ваш E-mail' required='')
+            +e(`col-2`).col-12.col-sm-6.offset-sm-3.col-md-4.offset-md-0
+              +b(`btn`, {m: `3`, e: `&`}, `button`) Отправить
+
+      +b(`section`, {m: `bg-1`}, `section`)
+        .container-fluid
+          +e(`title`, {}, `h2`) Преимущества Detailing Plus
+          .row
+            .col-12.col-md-4
+              +b(`advantage`)
+
+
+    +b-footer({e: `page`})
+
+  // Modals
+  include assets/modals

@@ -1,0 +1,102 @@
+.header {
+  $r: &;
+  font-weight: 400;
+  font-size: rem(14);
+  color: #FFFFFF;
+  line-height: 20/14*1em;
+  padding: rem(10) 0;
+  background: #0a0b0f;
+
+  &__container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+  }
+
+  &__logo {
+    height: rem(34);
+    margin: 0 rem(10) rem(10) 0;
+  }
+
+  &__tel-list {
+    max-width: 100%;
+    padding: 0 0 0 rem(25);
+    margin: 0 0 rem(10) auto;
+    position: relative;
+    &:before {
+      color: $green-1;
+      font-size: rem(20);
+      margin-top: rem(2);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__tel-item {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: inherit;
+    text-decoration: none;
+    &:hover, &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &__addr-list {
+    font-size: rem(12);
+    width: 100%;
+    padding: 0 0 0 rem(25);
+    margin: 0;
+    position: relative;
+    &:before {
+      color: $green-1;
+      font-size: rem(20);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__addr-item {
+
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: rem(14);
+    padding: rem(18) 0;
+
+    &__container {
+      flex-flow: nowrap;
+    }
+
+    &__logo {
+      flex: none;
+      height: rem(44);
+      margin: 0 rem(30) 0 0;
+    }
+
+    &__tel-list {
+      padding: 0 0 0 rem(35);
+      margin: 0 0 0 auto;
+      &:before {
+        font-size: rem(24);
+      }
+    }
+
+    &__addr-list {
+      font-size: inherit;
+      width: auto;
+      padding: 0 0 0 rem(35);
+      margin: 0 0 0 rem(56);
+      &:before {
+        font-size: rem(24);
+      }
+    }
+  }
+}

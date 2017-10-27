@@ -1,0 +1,7 @@
+.container-fluid {
+  max-width: 1200px;
+
+  &--wmax-800 {
+    max-width: 830px;
+  }
+}
