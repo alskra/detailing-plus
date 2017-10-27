@@ -364,6 +364,10 @@ fieldset[disabled] .btn {
   margin-bottom: 1em;
 }
 
+.section__title--advantages {
+  margin-bottom: 1.75em;
+}
+
 .section__lead {
   color: rgba(20, 20, 20, 0.7);
   font-size: 1.125rem;
@@ -973,6 +977,36 @@ fieldset[disabled] .field {
   .get-price__col-2 {
     padding-right: 0;
   }
+}
+
+.advantages-list {
+  margin-bottom: -2.8125rem;
+}
+
+.advantages-list p {
+  margin: 0;
+}
+
+.advantages-list__item {
+  text-align: center;
+  margin-bottom: 2.8125rem;
+}
+
+.advantages-list__item::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #0d9c9c;
+  font-size: 3.125rem;
+  line-height: 1em;
+  height: 3.125rem;
+  margin: 0 0 1.875rem;
 }
 
 .footer {

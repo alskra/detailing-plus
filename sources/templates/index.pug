@@ -181,10 +181,14 @@ include assets/b-footer
 
       +b(`section`, {m: `bg-1`}, `section`)
         .container-fluid
-          +e(`title`, {}, `h2`) Преимущества Detailing Plus
-          .row
-            .col-12.col-md-4
-              +b(`advantage`)
+          +e(`title`, {m: `advantages`}, `h2`) Преимущества Detailing Plus
+          +b(`advantages-list`).row
+            +e(`item`).icon-icon15.col-12.col-sm-6.offset-sm-3.col-md-4.offset-md-0
+              p Гарантия на&nbsp;все наши работы
+            +e(`item`).icon-icon07.col-12.col-sm-6.offset-sm-3.col-md-4.offset-md-0
+              p Бесплатный трансфер от&nbsp;сервиса до&nbsp;вашего дома
+            +e(`item`).icon-coffee.col-12.col-sm-6.offset-sm-3.col-md-4.offset-md-0
+              p Бесплатно кофе, чай и&nbsp;десерты, пока ваше авто обслуживается
 
 
     +b-footer({e: `page`})
