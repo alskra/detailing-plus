@@ -387,6 +387,16 @@ fieldset[disabled] .btn {
   padding-top: 0;
 }
 
+.section--contacts .section__title {
+  text-align: left;
+  margin-bottom: 0.35em;
+}
+
+.section--contacts .section__lead {
+  text-align: left;
+  margin-bottom: 1.5em;
+}
+
 @media (min-width: 768px) {
   .section {
     padding: 5.625rem 0;
@@ -397,11 +407,27 @@ fieldset[disabled] .btn {
   .section--pt-lg {
     padding-top: 0;
   }
+  .section--contacts {
+    position: relative;
+  }
+  .section--contacts::before {
+    content: '';
+    background: url("../img/contacts-bg.jpg") no-repeat 50% 50%/cover;
+    margin-left: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 58.33333%;
+  }
 }
 
 @media (min-width: 992px) {
   .section--pt-lg {
     padding-top: 5.625rem;
+  }
+  .section--contacts::before {
+    left: 50%;
   }
 }
 
@@ -1007,6 +1033,45 @@ fieldset[disabled] .field {
   line-height: 1em;
   height: 3.125rem;
   margin: 0 0 1.875rem;
+}
+
+.address {
+  padding: 0.3125rem 0;
+  margin: 0;
+}
+
+.address a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.address a:hover, .address a:focus {
+  color: #0d9c9c;
+  text-decoration: none;
+}
+
+.address__str {
+  display: block;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5em;
+  padding: 0 0 0 2.5rem;
+  margin: 0 0 1.75rem;
+  position: relative;
+}
+
+.address__str::before {
+  color: #0d9c9c;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 1.875rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.g-map {
+  height: 18.125rem;
 }
 
 .footer {

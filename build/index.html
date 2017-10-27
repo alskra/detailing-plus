@@ -9,8 +9,7 @@
     <meta name="keywords" content="">
     <!-- Favicons-->
     <!-- CSS-->
-    <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="css/app.min.css">
     <!-- JS Inline-->
     <script>
       /*! Fix <img> object-fit */
@@ -287,6 +286,202 @@
             </div>
           </div>
         </section>
+        <div class="section section--contacts">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 col-md-7 col-lg-5">
+                <h2 class="section__title">Контакты</h2>
+                <p class="section__lead">Мы&nbsp;находимся рядом с&nbsp;вами!</p>
+                <p class="section__lead">Специальные предложения для жителей ЖК&nbsp;&laquo;Дубровка&raquo;, ЖК&nbsp;&laquo;Коммунарка&raquo;, ЖК&nbsp;&laquo;Новая Звезда&raquo;.</p>
+                <address class="address">
+                  <p class="address__str icon-phone_icon">
+                    <a href="tel:88008003884">8 800-800-38-84</a>
+                  </p>
+                  <p class="address__str icon-point_icon">Город Москва, поселение Сосенское, деревня Сосенки, д.7</p>
+                </address>
+                <div class="g-map" id="map"></div>
+                <script>
+                  function initMap()
+                  {
+                    var map = new google.maps.Map(document.getElementById('map'),
+                    {
+                      center:
+                      {
+                        lat: 55.552886,
+                        lng: 37.431684
+                      },
+                      zoom: 9,
+                      styles: [
+                      {
+                        "featureType": "all",
+                        "elementType": "labels.text.fill",
+                        "stylers": [
+                        {
+                          "saturation": 36
+                        },
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 40
+                        }]
+                      },
+                      {
+                        "featureType": "all",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [
+                        {
+                          "visibility": "on"
+                        },
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 16
+                        }]
+                      },
+                      {
+                        "featureType": "all",
+                        "elementType": "labels.icon",
+                        "stylers": [
+                        {
+                          "visibility": "off"
+                        }]
+                      },
+                      {
+                        "featureType": "administrative",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 20
+                        }]
+                      },
+                      {
+                        "featureType": "administrative",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 17
+                        },
+                        {
+                          "weight": 1.2
+                        }]
+                      },
+                      {
+                        "featureType": "landscape",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 20
+                        }]
+                      },
+                      {
+                        "featureType": "poi",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 21
+                        }]
+                      },
+                      {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.fill",
+                        "stylers": [
+                        {
+                          "color": "#0D9C9C"
+                        },
+                        {
+                          "lightness": 17
+                        }]
+                      },
+                      {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [
+                        {
+                          "color": "#0D9C9C"
+                        },
+                        {
+                          "lightness": 29
+                        },
+                        {
+                          "weight": 0.2
+                        }]
+                      },
+                      {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#0D9C9C"
+                        },
+                        {
+                          "lightness": 18
+                        }]
+                      },
+                      {
+                        "featureType": "road.local",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#0D9C9C"
+                        },
+                        {
+                          "lightness": 16
+                        }]
+                      },
+                      {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 19
+                        }]
+                      },
+                      {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [
+                        {
+                          "color": "#000000"
+                        },
+                        {
+                          "lightness": 17
+                        }]
+                      }]
+                    });
+                    var marker = new google.maps.Marker(
+                    {
+                      map: map,
+                      position:
+                      {
+                        lat: 55.552886,
+                        lng: 37.431684
+                      },
+                      title: 'Detailing Plus' //,
+                      //icon: 'img/marker.png'
+                    });
+                  }
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <footer class="footer page__footer">
         <div class="footer__container container-fluid">
@@ -328,8 +523,7 @@
       </form>
     </div>
     <!-- JS-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzOTEh0q0r-2BuVxeLGaNTXJDl-pgA_-4"></script>
-    <script src="js/core.js"></script>
-    <script src="js/blocks.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzOTEh0q0r-2BuVxeLGaNTXJDl-pgA_-4&amp;callback=initMap" async defer></script>
+    <script src="js/app.min.js"></script>
   </body>
 </html>

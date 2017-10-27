@@ -28,7 +28,7 @@ mixin b-page(data)
       //-div(style='display: none')
         //-include ../../img/icons.svg
       // JS
-      script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzOTEh0q0r-2BuVxeLGaNTXJDl-pgA_-4')
+      script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzOTEh0q0r-2BuVxeLGaNTXJDl-pgA_-4&callback=initMap' async defer)
       //-script(src='https://cdn.jsdelivr.net/jquery.goodshare.js/4/goodshare.min.js')
       //-script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
       if $.isDevelopment
